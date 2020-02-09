@@ -24,7 +24,7 @@
             <div class="ear-right-black"></div>
         </div>
         <div class="heart"></div>
-        <p class="info">纯div + css动画，非图片</p>
+        <p class="info">(纯div + css动画，非图片)</p>
     </div>
 </template>
 
@@ -45,12 +45,12 @@ export default {
     .ball-white{
         position: absolute;
         top: 10vh;
-        left: calc(50% - 15vh + 0.2rem);
+        left: calc(50% - 15vh + 2px);
         height: 29vh;
         width: 15vh;
         border-radius: 15vh 0 0 15vh;
         background: #fff;
-        border: 0.5rem solid;
+        border: 5px solid #000;
         /* 动画名称 */
         animation-name: white-move;
         /* 持续时间 */
@@ -67,12 +67,12 @@ export default {
     .ball-red{
         position: absolute;
         top: 10vh;
-        right: calc(50% - 15vh + 0.2rem);
+        right: calc(50% - 15vh + 2px);
         height: 29vh;
         width: 15vh;
         border-radius: 0 15vh 15vh 0;
         background: #ED4A35;
-        border: 0.5rem solid;
+        border: 5px solid #000;
         /* 动画名称 */
         animation-name: red-move;
         /* 持续时间 */
@@ -94,7 +94,7 @@ export default {
         height: 6vh;
         border-radius: 50%;
         background: #fff;
-        border: 10px solid;
+        border: 10px solid #000;
         /* 动画名称 */
         animation-name: button-move;
         /* 持续时间 */
@@ -132,7 +132,7 @@ export default {
                 top: 5vh;
                 left: -1.2vh;
                 border-radius: 4vh;
-                border: 1px solid;
+                border: 1px solid #000;
                 background: #E0787F;
             }
             .face-red-right{
@@ -142,7 +142,7 @@ export default {
                 top: 5vh;
                 right: -1.2vh;
                 border-radius: 4vh;
-                border: 1px solid;
+                border: 1px solid #000;
                 background: #E0787F;
             }
         }
@@ -223,7 +223,7 @@ export default {
             top: -2.9vh;
             background: #FDE990;
             transform: skewX(32deg) rotate(7deg);
-            border: 1px solid;
+            border: 1px solid #000;
             z-index: 6;
         }
         .ear-left-black{
@@ -254,7 +254,7 @@ export default {
             top: -2.9vh;
             background: #FDE990;
             transform: skewX(-32deg) rotate(-7deg);
-            border: 1px solid;
+            border: 1px solid #000;
             z-index: 6;
         }
         .ear-right-black{
@@ -308,27 +308,33 @@ export default {
             animation-iteration-count: infinite;
         }
     }
+    .info{
+        position: absolute;
+        top: 40vh;
+        width: 100%;
+        font-size: 16px;
+    }
 }
 
 @keyframes white-move {
-    from {left: calc(50% - 15vh + 0.2rem)}
-    20% {left: calc(50% - 15vh + 0.2rem)}
-    35% {left: calc(50% - 34vh + 0.2rem)}
-    40% {left: calc(50% - 35vh + 0.2rem)}
-    60% {left: calc(50% - 35vh + 0.2rem)}
-    65% {left: calc(50% - 34vh + 0.2rem)}
-    80% {left: calc(50% - 15vh + 0.2rem)}
-    to {left: calc(50% - 15vh + 0.2rem)}
+    from {left: calc(50% - 15vh + 2px)}
+    20% {left: calc(50% - 15vh + 2px)}
+    35% {left: calc(50% - 34vh + 2px)}
+    40% {left: calc(50% - 35vh + 2px)}
+    60% {left: calc(50% - 35vh + 2px)}
+    65% {left: calc(50% - 34vh + 2px)}
+    80% {left: calc(50% - 15vh + 2px)}
+    to {left: calc(50% - 15vh + 2px)}
 }
 @keyframes red-move {
-    from {right: calc(50% - 15vh + 0.2rem)}
-    20% {right: calc(50% - 15vh + 0.2rem)}
-    35% {right: calc(50% - 34vh + 0.2rem)}
-    40% {right: calc(50% - 35vh + 0.2rem)}
-    60% {right: calc(50% - 35vh + 0.2rem)}
-    65% {right: calc(50% - 34vh + 0.2rem)}
-    80% {right: calc(50% - 15vh + 0.2rem)}
-    to {right: calc(50% - 15vh + 0.2rem)}
+    from {right: calc(50% - 15vh + 2px)}
+    20% {right: calc(50% - 15vh + 2px)}
+    35% {right: calc(50% - 34vh + 2px)}
+    40% {right: calc(50% - 35vh + 2px)}
+    60% {right: calc(50% - 35vh + 2px)}
+    65% {right: calc(50% - 34vh + 2px)}
+    80% {right: calc(50% - 15vh + 2px)}
+    to {right: calc(50% - 15vh + 2px)}
 }
 @keyframes button-move {
     from {right: calc(50% - 3vh)}

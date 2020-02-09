@@ -1,9 +1,64 @@
-html, body {
-    font-size: 10px;
-}
-
 .content {
     padding: 0;
     margin: 0 auto;
     width: 100%;
+}
+
+
+// REM 适配 <html>
+$designWidth:375;
+// 375px (iPhone 6)
+// 此为基准值
+html {
+    font-size: 20PX;
+}
+
+// 17.06667 = 320*20/375 (iPhone 5)
+// 此处 hack 写法，使用 19px 代替 17px，兼容过小(<10px)的中文字体使用
+@media only screen and (min-width: 270px) {
+    html {
+        font-size: #{20*320PX/$designWidth} !important;
+    }
+}
+
+// 19.2 = 360*20/375 (Most Android)
+@media only screen and (min-width: 359px) {
+    html {
+        font-size: #{20*360PX/$designWidth} !important;
+    }
+}
+
+// base root size (iPhone 6)
+@media only screen and (min-width: 374px) {
+    html {
+        font-size: #{20*375PX/$designWidth} !important;
+    }
+}
+
+// 21.3333 = 400*20/375 (Most Android)
+@media only screen and (min-width: 399px) {
+    html {
+        font-size: #{20*400PX/$designWidth} !important;
+    }
+}
+
+// 22.08 = 414*20/375 (iPhone 6 Plus)
+@media only screen and (min-width: 413px) {
+    html {
+        font-size: #{20*414PX/$designWidth} !important;
+    }
+}
+
+// 25.6 = 480*20/375 (iPad)
+@media only screen and (min-width: 439px) {
+    html {
+        font-size: #{20*480PX/$designWidth} !important;
+    }
+}
+
+ // 40.906666666666666 = 768*20/375 (iPad2)
+@media only screen and (min-width: 767px) {
+    html {
+        font-size: #{20*767PX/$designWidth} !important;
+    }
 }

@@ -16,4 +16,8 @@ export default {
 @import  './assets/css/bootstrap.css';
 @import  './assets/css/base.scss';
 
+#bran-app{
+    height: 100vh;
+    overflow: auto;
+}
 </style>
