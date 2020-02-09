@@ -48,9 +48,9 @@ export default {
         left: calc(50% - 15vh + 2px);
         height: 29vh;
         width: 15vh;
-        border-radius: 15vh 0 0 15vh;
+        border-radius: 29vh 0 0 29vh;
         background: #fff;
-        border: 5px solid #000;
+        border: 4px solid #000;
         /* 动画名称 */
         animation-name: white-move;
         /* 持续时间 */
@@ -61,7 +61,6 @@ export default {
         animation-direction: alternate-reverse;
         /* 动画循环次数  infinite无限 */
         animation-iteration-count: infinite;
-        box-shadow: 0px -20px 10px #ddd inset;
         z-index: 30;
     }
     .ball-red{
@@ -70,9 +69,9 @@ export default {
         right: calc(50% - 15vh + 2px);
         height: 29vh;
         width: 15vh;
-        border-radius: 0 15vh 15vh 0;
+        border-radius: 0 29vh 29vh 0;
         background: #ED4A35;
-        border: 5px solid #000;
+        border: 4px solid #000;
         /* 动画名称 */
         animation-name: red-move;
         /* 持续时间 */
@@ -83,7 +82,6 @@ export default {
         animation-direction: alternate-reverse;
         /* 动画循环次数  infinite无限 */
         animation-iteration-count: infinite;
-        box-shadow: 0px -20px 10px #af392a inset;
         z-index: 30;
     }
     .ball-button{
@@ -121,7 +119,6 @@ export default {
             top: 0;
             background: #FDE990;
             border-radius: 50%;
-            box-shadow: 0px -5px 10px #dacc8c inset;
             border: 1px solid #000;
             overflow: hidden;
             z-index: 8;

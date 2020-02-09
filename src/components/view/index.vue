@@ -7,7 +7,7 @@
                 <transition name="fade">
                     <div class="text" v-if="showSummary">
                         <p class="title">你好，我是Bran Lin。</p>
-                        <p class="descript">一个爱玩的前端工程师</p>
+                        <p class="descript">一个钻牛角尖的前端工程师</p>
                     </div>
                 </transition>
                 <transition name="fadebtn">
@@ -40,13 +40,12 @@
                 <transition name="fade">
                     <div v-if="showAbout">
                         <div class="avatar-box">
-                            <img src="../../assets/img/avatar.png" alt="">
+                            <img src="../../assets/img/avatar.jpg" alt="">
                         </div>
                         <div class="text-box">
                             <div class="text">
-                                我叫林泊伦，坐标广州，是一名Web前端工程师。2017年毕业，是一名在南方医科大学读信息工程的苦逼工科生（orz）。比较爱玩，喜欢研究新鲜技术，目前在前端的行业上努力学习中。
+                                我叫林泊伦，坐标广州，是一名Web前端工程师。2017年毕业，是一名在南方医科大学读信息工程的苦逼工科生（orz）。比较爱钻牛角尖，对一个像素的差别都要计较，目前在前端的行业上努力学习中。
                             </div>
-
                         </div>
                     </div>
                 </transition>
