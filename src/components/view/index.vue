@@ -52,6 +52,7 @@
             </div>
         </div>
         <div class="section prod" :class="{'active': (activeSection == 'prod')}">
+            <div class="prod-content">
             <p class="section-title">
                 个人作品
                 <transition
@@ -61,10 +62,22 @@
                     leave-active-class="animated"
                     leave-to-class="enter"
                 >
-                    <div class="section-title-after" v-if="showAbout"></div>
+                    <div class="section-title-after" v-if="showProd"></div>
                 </transition>
             </p>
-            <div class="about-content">
+                <transition name="fade">
+                    <div v-if="showProd" class="prod-box">
+                        <div class="prod-item">
+                            <div class="text-box">
+                                <p class="title">推箱子</p>
+                                <p class="des">使用 JS + Canvas 实现的网页游戏</p>
+                            </div>
+                            <div class="logo-box">
+                                <img class="logo" src="../../assets/img/prod-logo1.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </transition>
             </div>
         </div>
         <div class="section job" :class="{'active': (activeSection == 'job')}">
@@ -84,6 +97,7 @@ export default {
         return {
             showSummary: false,
             showAbout: false,
+            showProd: false,
             activeSection: ''
         }
     },
@@ -96,11 +110,16 @@ export default {
     methods: {
         srcollListener(event){
             let item = event.srcElement;
+            console.log(34)
             if(item.scrollTop < item.offsetHeight) {
-                this.activeSection = 'summary'
-            } else if(item.scrollTop >= item.offsetHeight) {
+                this.activeSection = 'summary';
+            } else if(item.scrollTop >= item.offsetHeight && item.scrollTop < (2*item.offsetHeight)) {
                 this.showAbout = true;
-                this.activeSection = 'about'
+                this.activeSection = 'about';
+            } else if(item.scrollTop >= (2*item.offsetHeight)) {
+                this.showProd = true;
+                this.activeSection = 'prod';
+                console.log(344)
             }
 
         },
@@ -198,20 +217,6 @@ export default {
                         background: #fff;
                     }
                 }
-                .fade-enter-active, .fade-leave-active {
-                    transition: all 1s;
-                }
-                .fade-enter, .fade-leave-to {
-                    transform: translateY(2em);
-                    opacity: 0;
-                }
-                .fadebtn-enter-active, .fadebtn-leave-active {
-                    transition: all 1s linear 1s;
-                }
-                .fadebtn-enter, .fadebtn-leave-to {
-                    transform: translateY(2em);
-                    opacity: 0;
-                }
             }
         }
         &.about{
@@ -236,22 +241,52 @@ export default {
                 }
                 .text-box{
                     flex: 1;
-                    padding: 30px;
+                    padding: 1.5rem;
                     font-size: 0.7rem;
                     color: #999;
-                }
-                .fade-enter-active, .fade-leave-active {
-                    transition: all 1s;
-                }
-                .fade-enter, .fade-leave-to {
-                    transform: translateY(2em);
-                    opacity: 0;
                 }
             }
         }
         &.prod{
             padding-top: 5vh;
-            background-color: rgba(256,256,256,0.7)
+            background-color: rgba(256,256,256,0.7);
+            .prod-box{
+                height: calc(95vh - 3.1rem);
+                padding: 1.5rem;
+                .prod-item{
+                    width: 100%;
+                    height: 30%;
+                    display: flex;
+                    border: 1px solid #999;
+                    background-color: rgba(0,0,0,0.5);
+                    .text-box{
+                        flex: 1;
+                        padding: 1rem;
+                        color: #fff;
+                        p{
+                            margin: 0;
+                            padding-top: 0.5rem;
+                        }
+                        .title{
+                            font-size: 1rem;
+                        }
+                        .des{
+                            font-size: 0.6rem;
+                        }
+                    }
+                    .logo-box{
+                        flex: 0 0 6rem;
+                        display: flex;
+                        align-items: center;
+                        padding-right: 1.5rem;
+                        line-height: 100%;
+                        vertical-align: middle;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
         }
         &.job{
             padding-top: 5vh;
@@ -278,6 +313,20 @@ export default {
         &.animated{
             transition: all 1s;
         }
+    }
+    .fade-enter-active, .fade-leave-active {
+        transition: all 1s;
+    }
+    .fade-enter, .fade-leave-to {
+        transform: translateY(2em);
+        opacity: 0;
+    }
+    .fadebtn-enter-active, .fadebtn-leave-active {
+        transition: all 1s linear 1s;
+    }
+    .fadebtn-enter, .fadebtn-leave-to {
+        transform: translateY(2em);
+        opacity: 0;
     }
 }
 </style>
