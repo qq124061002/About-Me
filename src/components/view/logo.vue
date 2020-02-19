@@ -39,18 +39,18 @@ export default {
 <style lang='scss'>
 .logo-container{
     position: relative;
-    width: 80%;
-    height: 50vh;
-    margin: -50vh auto 0;
+    width: 300px;
+    height: 334px;
+    margin: -334px auto 0;
     .ball-white{
         position: absolute;
-        top: 10vh;
-        left: calc(50% - 15vh + 2px);
-        height: 29vh;
-        width: 15vh;
-        border-radius: 29vh 0 0 29vh;
+        top: 67px;
+        left: calc(50% - 100px + 3px);
+        height: 194px;
+        width: 100px;
+        border-radius: 98px 0 0 98px;
         background: #fff;
-        border: 4px solid #000;
+        border: 6px solid #000;
         /* 动画名称 */
         animation-name: white-move;
         /* 持续时间 */
@@ -65,13 +65,13 @@ export default {
     }
     .ball-red{
         position: absolute;
-        top: 10vh;
-        right: calc(50% - 15vh + 2px);
-        height: 29vh;
-        width: 15vh;
-        border-radius: 0 29vh 29vh 0;
+        top: 67px;
+        right: calc(50% - 100px + 3px);
+        height: 194px;
+        width: 100px;
+        border-radius: 0 98px 98px 0;
         background: #ED4A35;
-        border: 4px solid #000;
+        border: 6px solid #000;
         /* 动画名称 */
         animation-name: red-move;
         /* 持续时间 */
@@ -86,10 +86,10 @@ export default {
     }
     .ball-button{
         position: absolute;
-        top: calc(50% - 3.5vh);
-        right: calc(50% - 3vh);
-        width: 6vh;
-        height: 6vh;
+        top: calc(50% - 23px);
+        right: calc(50% - 20px);
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         background: #fff;
         border: 10px solid #000;
@@ -107,14 +107,14 @@ export default {
     }
     .pokemon{
         position: absolute;
-        width: 12vh;
-        height: 10vh;
-        left: calc( 50% - 6vh);
-        top: 22vh;
+        width: 80px;
+        height: 67px;
+        left: calc( 50% - 40px);
+        top: 147px;
         .face{
             position: absolute;
-            width: 12vh;
-            height: 10vh;
+            width: 80px;
+            height: 67px;
             left: 0;
             top: 0;
             background: #FDE990;
@@ -124,100 +124,100 @@ export default {
             z-index: 8;
             .face-red-left{
                 position: absolute;
-                width: 3.5vh;
-                height: 3.5vh;
-                top: 5vh;
-                left: -1.2vh;
-                border-radius: 4vh;
+                width: 23px;
+                height: 23px;
+                top: 33px;
+                left: -8px;
+                border-radius: 27px;
                 border: 1px solid #000;
                 background: #E0787F;
             }
             .face-red-right{
                 position: absolute;
-                width: 3.5vh;
-                height: 3.5vh;
-                top: 5vh;
-                right: -1.2vh;
-                border-radius: 4vh;
+                width: 23px;
+                height: 23px;
+                top: 33px;
+                right: -8px;
+                border-radius: 27px;
                 border: 1px solid #000;
                 background: #E0787F;
             }
         }
         .eye1{
             position: absolute;
-            width: 2.5vh;
-            height: 2.5vh;
-            top: 3vh;
-            left: 1.5vh;
-            border-radius: 2.5vh;
+            width: 17px;
+            height: 17px;
+            top: 20px;
+            left: 10px;
+            border-radius: 17px;
             background: #000;
             z-index: 10;
         }
         .eye1-white{
             position: absolute;
-            width: 1vh;
-            height: 1vh;
-            top: 3vh;
-            left: 2.7vh;
-            border-radius: 2.5vh;
+            width: 7px;
+            height: 7px;
+            top: 20px;
+            left: 18px;
+            border-radius: 17px;
             background: #fff;
             z-index: 20;
         }
         .eye2{
             position: absolute;
-            width: 2.5vh;
-            height: 2.5vh;
-            top: 3vh;
-            right: 1.5vh;
-            border-radius: 2.5vh;
+            width: 17px;
+            height: 17px;
+            top: 20px;
+            right: 10px;
+            border-radius: 17px;
             background: #000;
             z-index: 10;
         }
         .eye2-white{
             position: absolute;
-            width: 1vh;
-            height: 1vh;
-            top: 3vh;
-            right: 2.7vh;
-            border-radius: 2.5vh;
+            width: 7px;
+            height: 7px;
+            top: 20px;
+            right: 18px;
+            border-radius: 17px;
             background: #fff;
             z-index: 20;
         }
         .mouth{
             position: absolute;
-            width: 2.5vh;
-            height: 0.7vh;
-            top: 6.5vh;
-            right: 4.8vh;
-            border-radius: 0 0 2.5vh 2.5vh;
+            width: 17px;
+            height: 5px;
+            top: 43px;
+            right: 32px;
+            border-radius: 0 0 17px 17px;
             background: #000;
             z-index: 20;
             .mouth-white{
                 position: absolute;
-                width: 2.4vh;
-                height: 0.5vh;
-                left: 0.05vh;
-                border-radius: 0 0 2.4vh 2.4vh;
+                width: 16px;
+                height: 3px;
+                left: 0;
+                border-radius: 0 0 16px 16px;
                 background: #FDE990;
                 z-index: 20;
             }
         }
         .ear-left{
             position: absolute;
-            width: 7vh;
-            height: 6vh;
-            left: 9vh;
-            top: -4vh;
+            width: 47px;
+            height: 40px;
+            left: 60px;
+            top: -27px;
             background: #000;
             transform: skewX(-32deg) rotate(-7deg);
             z-index: 5;
         }
         .ear-left-yellow{
             position: absolute;
-            width: 5.5vh;
-            height: 5.2vh;
-            right: 8.4vh;
-            top: -2.9vh;
+            width: 37px;
+            height: 35px;
+            right: 56px;
+            top: -19px;
             background: #FDE990;
             transform: skewX(32deg) rotate(7deg);
             border: 1px solid #000;
@@ -225,30 +225,30 @@ export default {
         }
         .ear-left-black{
             position: absolute;
-            width: 2.5vh;
-            height: 2.2vh;
-            right: 13vh;
-            top: -3.9vh;
+            width: 17px;
+            height: 15px;
+            right: 87px;
+            top: -26px;
             background: #000;
             transform: skewX(32deg) rotate(7deg);
             z-index: 7;
         }
         .ear-right{
             position: absolute;
-            width: 7vh;
-            height: 6vh;
-            right: 9vh;
-            top: -4vh;
+            width: 47px;
+            height: 40px;
+            right: 60px;
+            top: -27px;
             background: #000;
             transform: skewX(32deg) rotate(7deg);
             z-index: 5;
         }
         .ear-right-yellow{
             position: absolute;
-            width: 5.5vh;
-            height: 5.2vh;
-            left: 8.5vh;
-            top: -2.9vh;
+            width: 37px;
+            height: 35px;
+            left: 57px;
+            top: -19px;
             background: #FDE990;
             transform: skewX(-32deg) rotate(-7deg);
             border: 1px solid #000;
@@ -256,10 +256,10 @@ export default {
         }
         .ear-right-black{
             position: absolute;
-            width: 2.5vh;
-            height: 2.2vh;
-            left: 13vh;
-            top: -3.9vh;
+            width: 17px;
+            height: 15px;
+            left: 87px;
+            top: -26px;
             background: #000;
             transform: skewX(-32deg) rotate(-7deg);
             z-index: 7;
@@ -267,17 +267,17 @@ export default {
     }
     .heart{
         position: relative;
-        left: 37vw;
-        top: 13vh;
+        left: 139px;
+        top: 87px;
         &:before,&:after{
             content: "";
             position: absolute;
-            width: 3vw;
-            height: 4.5vw;
+            width: 11px;
+            height: 17px;
             background: red;
-            left: 3vw;
+            left: 11px;
             top: 0;
-            border-radius: 2vw 2vw 0 0;
+            border-radius: 8px 8px 0 0;
             transform: rotate(-45deg);
             transform-origin: 0 100%;
             animation-name: red-heart;
@@ -307,77 +307,77 @@ export default {
     }
     .info{
         position: absolute;
-        top: 40vh;
+        top: 267px;
         width: 100%;
         font-size: 16px;
     }
 }
 
 @keyframes white-move {
-    from {left: calc(50% - 15vh + 2px)}
-    20% {left: calc(50% - 15vh + 2px)}
-    35% {left: calc(50% - 34vh + 2px)}
-    40% {left: calc(50% - 35vh + 2px)}
-    60% {left: calc(50% - 35vh + 2px)}
-    65% {left: calc(50% - 34vh + 2px)}
-    80% {left: calc(50% - 15vh + 2px)}
-    to {left: calc(50% - 15vh + 2px)}
+    from {left: calc(50% - 100px + 2px)}
+    20% {left: calc(50% - 100px + 2px)}
+    35% {left: calc(50% - 227px + 2px)}
+    40% {left: calc(50% - 233px + 2px)}
+    60% {left: calc(50% - 233px + 2px)}
+    65% {left: calc(50% - 227px + 2px)}
+    80% {left: calc(50% - 100px + 2px)}
+    to {left: calc(50% - 100px + 2px)}
 }
 @keyframes red-move {
-    from {right: calc(50% - 15vh + 2px)}
-    20% {right: calc(50% - 15vh + 2px)}
-    35% {right: calc(50% - 34vh + 2px)}
-    40% {right: calc(50% - 35vh + 2px)}
-    60% {right: calc(50% - 35vh + 2px)}
-    65% {right: calc(50% - 34vh + 2px)}
-    80% {right: calc(50% - 15vh + 2px)}
-    to {right: calc(50% - 15vh + 2px)}
+    from {right: calc(50% - 100px + 2px)}
+    20% {right: calc(50% - 100px + 2px)}
+    35% {right: calc(50% - 227px + 2px)}
+    40% {right: calc(50% - 233px + 2px)}
+    60% {right: calc(50% - 233px + 2px)}
+    65% {right: calc(50% - 227px + 2px)}
+    80% {right: calc(50% - 100px + 2px)}
+    to {right: calc(50% - 100px + 2px)}
 }
 @keyframes button-move {
-    from {right: calc(50% - 3vh)}
-    20% {right: calc(50% - 3vh)}
-    35% {right: calc(50% - 22vh)}
-    40% {right: calc(50% - 23vh)}
-    60% {right: calc(50% - 23vh)}
-    65% {right: calc(50% - 22vh)}
-    80% {right: calc(50% - 3vh)}
-    to {right: calc(50% - 3vh)}
+    from {right: calc(50% - 20px)}
+    20% {right: calc(50% - 20px)}
+    35% {right: calc(50% - 147px)}
+    40% {right: calc(50% - 153px)}
+    60% {right: calc(50% - 153px)}
+    65% {right: calc(50% - 147px)}
+    80% {right: calc(50% - 20px)}
+    to {right: calc(50% - 20px)}
 }
 @keyframes red-heart {
     from {  
-        width: 3vw;
-        height: 4.5vw;
+        width: 11px;
+        height: 17px;
         top: 0;
         background: red;
-        border-radius: 2vw 2vw 0 0;
+        border-radius: 8px 8px 0 0;
     }
     40% {
-        width: 3vw;
-        height: 4.5vw;
+        width: 11px;
+        height: 17px;
         top: 0;
         background: red;
-        border-radius: 2vw 2vw 0 0;
+        border-radius: 8px 8px 0 0;
     }
     50% {
-        width: 4vw;
-        height: 6vw;
-        top: -2vh;
+        width: 15px;
+        height: 23px;
+        top: -13px;
         background: red;
-        border-radius: 2.6666vw 2.66666vw 0 0;
+        border-radius: 10px 10px 0 0;
     }
     60% {
-        width: 3vw;
-        height: 4.5vw;
+        width: 11px;
+        height: 17px;
         top: 0;
         background: red;
-        border-radius: 2vw 2vw 0 0;
+        border-radius: 8px 8px 0 0;
     }
     to {
-        width: 3vw;
-        height: 4.5vw;
+        width: 11px;
+        height: 17px;
         top: 0;
         background: red;
-        border-radius: 2vw 2vw 0 0;
+        border-radius: 8px 8px 0 0;
     }
 }
 @keyframes red-heart-after {
@@ -388,7 +388,7 @@ export default {
         left: 0;
     }
     50% {
-        left: -1vw
+        left: -4px;
     }
     60% {
         left: 0;

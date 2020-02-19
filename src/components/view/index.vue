@@ -52,7 +52,22 @@
             </div>
         </div>
         <div class="section prod" :class="{'active': (activeSection == 'prod')}">
-            <img src="../../assets/img/in-program.jpg">
+            <p class="section-title">
+                个人作品
+                <transition
+                    name="title"
+                    enter-class="enter"
+                    enter-active-class="animated"
+                    leave-active-class="animated"
+                    leave-to-class="enter"
+                >
+                    <div class="section-title-after" v-if="showAbout"></div>
+                </transition>
+            </p>
+            <div class="about-content">
+            </div>
+        </div>
+        <div class="section job" :class="{'active': (activeSection == 'job')}">
         </div>
     </div>
 </template>
@@ -122,6 +137,11 @@ export default {
     height: 100%;
     margin: 0 auto;
     overflow: auto;
+    background-image: url(../../assets/img/bg2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
     .section {
         width: 100%;
         height: 100vh;
@@ -131,7 +151,7 @@ export default {
         &.summary{
             color: #2c3e50;
             position: relative;
-            background-image: url(../../assets/img/backgroud1.jpg);
+            background-image: url(../../assets/img/bg1.jpg);
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
@@ -196,6 +216,7 @@ export default {
         }
         &.about{
             padding-top: 5vh;
+            background: #fff;
             .about-content{
                 position: relative;
                 width: 100%;
@@ -229,11 +250,12 @@ export default {
             }
         }
         &.prod{
-            background: #f6f6f6;
             padding-top: 5vh;
-            img {
-                width: 100%;
-            }
+            background-color: rgba(256,256,256,0.7)
+        }
+        &.job{
+            padding-top: 5vh;
+            background: #fff;
         }
         .section-title{
             position: relative;
