@@ -67,7 +67,7 @@
             </p>
                 <transition name="fade">
                     <div v-if="showProd" class="prod-box">
-                        <div class="prod-item">
+                        <div class="prod-item" @click="goPushBox">
                             <div class="text-box">
                                 <p class="title">推箱子</p>
                                 <p class="des">使用 JS + Canvas 实现的网页游戏</p>
@@ -86,7 +86,7 @@
 </template>
 
 <script>
-import indexLogo from './logo.vue';
+import indexLogo from '../common/logo.vue';
 
 export default {
     name: 'index',
@@ -110,7 +110,6 @@ export default {
     methods: {
         srcollListener(event){
             let item = event.srcElement;
-            console.log(34)
             if(item.scrollTop < item.offsetHeight) {
                 this.activeSection = 'summary';
             } else if(item.scrollTop >= item.offsetHeight && item.scrollTop < (2*item.offsetHeight)) {
@@ -119,7 +118,6 @@ export default {
             } else if(item.scrollTop >= (2*item.offsetHeight)) {
                 this.showProd = true;
                 this.activeSection = 'prod';
-                console.log(344)
             }
 
         },
@@ -134,17 +132,22 @@ export default {
         scrollTop(destination) {
             let scrollItem = this.$refs.SectionContainer;
             let distance = destination - scrollItem.scrollTop;
-            let preDistance = distance/50;
+            let preDistance = distance / 50;
+            let SumDistance = scrollItem.scrollTop;
             let i = 0;
 
             let Action = setInterval(() => {
-                if(i <= 51) {
+                if(i < 50) {
                     i++;
-                    scrollItem.scrollTop += preDistance;
+                    SumDistance += preDistance;
+                    scrollItem.scrollTop = Math.ceil(SumDistance);
                 } else {
                     clearInterval(Action)
                 }
             }, 10)
+        },
+        goPushBox() {
+            this.$router.push('/pushBox')
         }
     }
 }

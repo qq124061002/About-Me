@@ -8,13 +8,18 @@ export default new Router({
   base: '/MyPage/',
   routes: [
     {
-      path: '/index',
-      name: 'Main',
-      component: (resolve) => require(['../components/view/index.vue'],resolve)
+        path: '/index',
+        name: 'Main',
+        component: (resolve) => require(['../components/view/index.vue'],resolve)
     },
     {
-      path:'*',
-      redirect:'/index'
+        path: '/pushBox',
+        name: 'pushBox',
+        component: (resolve) => require(['../components/view/pushBox.vue'],resolve)
+    },
+    {
+        path:'*',
+        redirect:'/index'
     }
   ]
 })
