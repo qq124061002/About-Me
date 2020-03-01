@@ -4,6 +4,13 @@
     width: 100%;
 }
 
+p {
+    margin: 0;
+}
+
+.bold {
+    font-weight: bold;
+}
 
 // REM 适配 <html>
 $designWidth:375;

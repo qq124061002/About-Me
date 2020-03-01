@@ -1,12 +1,16 @@
 <template>
-    <div class="game-container">
+    <div class="game-container" v-on:touchstart="onScroll" >
+        <div class="game-title">
+            <button class="go-back" @click="goBack">返回</button>
+            <p class="text">
+                第 {{currentLevelNum + 1}} 关
+            </p>
+        </div>
         <div class="mon">
             <canvas id="canvas" width="560" height="560"></canvas>
         </div>
         <div class="button-box">
-            <p class="level-msg">
-                第 {{currentLevelNum + 1}} 关
-            </p>
+
             <div class="system-key">
                 <div class="button-row">
                     <div class="button-item">
@@ -97,8 +101,14 @@ export default {
         }
     },
     mounted() {
+        var _this = this;
+
         this.canvasObj = document.getElementById("canvas");
         this.cxtObj = this.canvasObj.getContext("2d");
+
+        document.onkeydown = (e) => {
+            _this.doKeyDown(e);
+        };
     },
     methods: {
         preload (num) {
@@ -296,6 +306,14 @@ export default {
             //若果小动了 返回true 指代能够移动小人
             return true;
         },
+        copyArray(arr){
+            let b=[];//每次移动更新地图数据都先清空再添加新的地图
+            for (let i=0;i<arr.length ;i++ )
+            {
+                b[i] = arr[i].concat();//链接两个数组
+            }
+            return b;
+        },
         doKeyDown(event){
             switch (event.keyCode)
             {
@@ -312,14 +330,13 @@ export default {
                 this.go("down");
                 break;
             }
+
         },
-        copyArray(arr){
-            let b=[];//每次移动更新地图数据都先清空再添加新的地图
-            for (let i=0;i<arr.length ;i++ )
-            {
-                b[i] = arr[i].concat();//链接两个数组
-            }
-            return b;
+        onScroll(event) {
+            console.log(event)
+        },
+        goBack() {
+            this.$router.push('/index')
         }
     }
 }
@@ -330,10 +347,30 @@ export default {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     margin: 0 auto;
     overflow: hide;
     background-color: #fff;
+    .game-title{
+        padding-top: 5vw;
+        .go-back{
+            position: absolute;
+            left: 5vw;
+            width: 4rem;
+            height: 1.5rem;
+            background-color: #fff;
+            font-size: 0.7rem;
+            border: 2px solid #222;
+            border-radius: 1rem;
+        }
+        .text{
+            font-size: 1.2rem;
+            font-weight: 500;
+            line-height: 1.5rem;
+            text-align: center;
+            margin: 0;
+        }
+    }
     .mon{
         width: 90%;
         height: 0;
@@ -350,13 +387,6 @@ export default {
         flex-direction: column;
         flex: 1;
         padding: 10% 5% 5%;
-        .level-msg{
-            font-size: 1rem;
-            line-height: 1.2rem;
-            text-align: center;
-            margin: 0;
-            padding-bottom: 0.5rem;
-        }
         .system-key{
             flex: 1;
             .button-item{
@@ -373,11 +403,13 @@ export default {
             display: flex;
             flex: 6;
             flex-direction: column;
+            padding: 0.5rem 4rem 0;
             button{
                 border: none;
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: 3.2rem;
+                background-size: contain;
                 &.up{
                     background-image: url(../../assets/img/button-UP.png);
                 }
