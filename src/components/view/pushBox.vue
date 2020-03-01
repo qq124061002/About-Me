@@ -1,5 +1,5 @@
 <template>
-    <div class="game-container" v-on:touchstart="onScroll" >
+    <div class="game-container">
         <div class="game-title">
             <button class="go-back" @click="goBack">返回</button>
             <p class="text">
@@ -25,7 +25,7 @@
                 </div>
             </div>
             
-            <div class="direction-key">
+            <div class="direction-key" :style="keyBoardStyle">
                 <div class="button-row">
                     <div class="button-item"></div>
                     <div class="button-item">
@@ -97,7 +97,8 @@ export default {
                 y: 5
             },
             showMsg: false,
-            imgNum: 0
+            imgNum: 0,
+            keyBoardStyle: ''
         }
     },
     mounted() {
@@ -109,6 +110,9 @@ export default {
         document.onkeydown = (e) => {
             _this.doKeyDown(e);
         };
+
+        let height = document.querySelector('.direction-key').clientHeight;
+        this.keyBoardStyle = 'width: '+ height +'px;'
     },
     methods: {
         preload (num) {
@@ -332,9 +336,6 @@ export default {
             }
 
         },
-        onScroll(event) {
-            console.log(event)
-        },
         goBack() {
             this.$router.push('/index')
         }
@@ -403,7 +404,8 @@ export default {
             display: flex;
             flex: 6;
             flex-direction: column;
-            padding: 0.5rem 4rem 0;
+            padding-top: 10px;
+            margin: 0 auto;
             button{
                 border: none;
                 background-repeat: no-repeat;
